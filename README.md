@@ -6,28 +6,30 @@
 
   <h1 align="center">Universidade Federal de Mato Grosso do Sul</h1>
 
-  <h3 align="center">Disciplina</h3>
+  <h3 align="center">Estrutura de Dados</h3>
 
-  <h3 align="center">Docente</h3>
+  <h3 align="center">Diego Padilha Rubert</h3>
 
-  <h3 align="center">Título</h3>
+  <h3 align="center">Exercícios</h3>
 </p>
 
 ## Sobre
 
-[![Product Name Screen Shot][screenshot]](https://example.com)
+<!-- [![Product Name Screen Shot][screenshot]](https://example.com) -->
 
-Descrição e objetivo do projeto.
+Exercícios práticos realizados na disciplina de Estrutura de Dados.
 
 ## Tecnologia
 
 ### Linguagens e Frameworks
 
-- Lista das tecnologias utilizadas.
+- C++
+- Python 3
 
 ### Ferramentas Utilizadas
 
-- Lista das ferramentas utilizadas.
+- Visual Studio Code (VSCode).
+- Xournal++
 
 ## Começando
 
