@@ -7,12 +7,12 @@ Pilha::Pilha()
   topo = new Celula();
 }
 
-// Pilha::~Pilha()
-// {
-//   while (!vazia())
-//     desempilhar();
-//   delete topo;
-// }
+Pilha::~Pilha()
+{
+  while (!vazia())
+    desempilhar();
+  delete topo;
+}
 
 void Pilha::empilhar(int chave)
 {
@@ -43,25 +43,21 @@ void Pilha::escrever(void)
 
   for (ponteiro = topo->proximo; ponteiro != NULL; ponteiro = ponteiro->proximo)
     if (ponteiro->proximo == NULL)
-      ponteiro->escrever("\n");
+      ponteiro->escrever("");
     else
       ponteiro->escrever();
 }
 
 int Pilha::maior(void)
 {
-  Celula *ponteiro;     // 1
-  int maior = INT_MIN;  // 1
+  Celula *ponteiro;
+  int maior = INT_MIN;
 
-  for (ponteiro = topo->proximo; ponteiro != NULL; ponteiro = ponteiro->proximo) // 1; n+1; n = n
-    if (ponteiro->chave > maior)  // 1
-      maior = ponteiro->chave;    // 1
-    
-    // 2n = n
+  for (ponteiro = topo->proximo; ponteiro != NULL; ponteiro = ponteiro->proximo)
+    if (ponteiro->chave > maior)
+      maior = ponteiro->chave;
 
-  return maior; // 1
-
-  // n + n + 3 = n = O(n)
+  return maior;
 }
 
 bool Pilha::vazia(void)

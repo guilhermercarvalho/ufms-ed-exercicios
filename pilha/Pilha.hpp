@@ -5,7 +5,7 @@ class Pilha
 {
 public:
   Pilha();
-  // ~Pilha();
+  ~Pilha();
   void empilhar(int chave);
   int desempilhar(void);
   void escrever(void);

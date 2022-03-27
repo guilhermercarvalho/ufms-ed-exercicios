@@ -1,49 +1,21 @@
 #include <cstdio>
-#include <bits/stdc++.h>
-#include "Pilha.hpp"
-
-int busca_maior_chave(int tamanho, Pilha tabela[])
-{
-  int maior = INT_MIN; // 1
-
-  for (int i = 0; i < tamanho; i++) // 1; n + 1; n = n
-    if (!tabela[i].vazia()) // 1
-    {
-      int maior_celula = tabela[i].maior(); // n
-      if (maior_celula != NULL && maior_celula > maior) // 1
-        maior = maior_celula; // 1
-    }
-    // (3n + n) * n = n² 
-
-  return maior; // 1
-
-  // n + n² + 2 = n² = O(n²)
-}
+#include "TabelaDeAcessoDireto.hpp"
 
 int main(void)
 {
-  Pilha *tabela = new Pilha[10]();
+  TabelaDeAcessoDireto tabela = TabelaDeAcessoDireto(10);
 
-  tabela[1].empilhar(4);
-  tabela[1].empilhar(2);
+  tabela.inserir(1, 4);
+  tabela.inserir(1, 2);
+  tabela.inserir(4, 3);
+  tabela.inserir(4, 30);
+  tabela.inserir(7, 6);
+  tabela.inserir(7, 1);
+  tabela.inserir(7, 5);
 
-  tabela[4].empilhar(3);
-  tabela[4].empilhar(30);
+  tabela.escrever();
 
-  tabela[7].empilhar(6);
-  tabela[7].empilhar(1);
-  tabela[7].empilhar(5);
-
-  printf("\nmaior: %d\n", busca_maior_chave(10, tabela));
-
-  for (int i = 0; i < 10; i++)
-  {
-    if (!tabela[i].vazia())
-      tabela[i].escrever();
-  }
-
-  // printf("A chave desempilhada foi: %d.\n", tabela[1].desempilhar());
-  // tabela[1].escrever();
+  printf("\nMaior Chave: %d\n", tabela.maior());
 
   return 0;
 }
